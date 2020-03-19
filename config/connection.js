@@ -11,3 +11,5 @@ connection.connect(function (err) {
    if(err) console.log(err) 
    console.log("connection", connection.threadId)
 })
+
+module.exports=connection
