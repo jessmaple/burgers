@@ -18,6 +18,6 @@ $(".devoured").on("click",function(){
         url:"/api/burgers/"+id,
         method: "PUT"
     }).then(function(data){
-        location.reload
+        location.reload()
     })
 })
