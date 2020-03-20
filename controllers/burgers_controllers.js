@@ -9,6 +9,14 @@ function burgers_controller(app) {
       burgers:data});
     });
   });
+
+  app.post("/api/burgers", function(req,res){
+    var newBurger = req.body.burger_name
+    burger.insertOne( newBurger, function(data){
+      res.json(data)
+    } )
+  })
+
 }
 // export function (or anything in the file)
 module.exports = burgers_controller;
