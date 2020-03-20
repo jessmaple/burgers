@@ -4,7 +4,9 @@ var burger = require("../models/burgers");
 function burgers_controller(app) {
   app.get("/", function(req, res) {
     burger.selectAll(function(data) {
-      res.render("index", data);
+      console.log(data);
+      res.render("index", {
+      burgers:data});
     });
   });
 }

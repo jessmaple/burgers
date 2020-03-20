@@ -2,6 +2,12 @@
 // require = import, it is an import function
 var express = require("express");
 var app = express();
+
+var expressHBS = require("express-handlebars")
+app.engine("handlebars", expressHBS({
+    defaultLayout:"main"
+}))
+app.set("view engine", "handlebars")
 // if tests conditions , if is for testing true or false 
 // or statements, at least one condition is true 
 // process.env.PORT for heroku
