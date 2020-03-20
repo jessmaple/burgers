@@ -17,6 +17,13 @@ function burgers_controller(app) {
     } )
   })
 
+  app.put("/api/burgers/:id",function(req,res){
+    var id=req.params.id
+    burger.updateOne (id, function(data){
+      res.json(data)
+    })
+
+  })
 }
 // export function (or anything in the file)
 module.exports = burgers_controller;

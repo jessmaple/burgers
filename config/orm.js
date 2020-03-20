@@ -19,6 +19,13 @@ var orm = {
       }
     );
     console.log(statement.sql);
+  },
+  updateOne: function(tableName, columnNames, values, cbModel){
+    var statement = connection.query("update ?? set ?? = ? where ?? = ?", [tableName, columnNames[0],values[0],columnNames[1], values[1]], function(err,data){
+      cbModel(data)
+    }  )
+
+    console.log(statement.sql)
   }
 };
 
